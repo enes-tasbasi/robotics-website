@@ -1,21 +1,16 @@
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
-let $hamburgerMenu = document.querySelector('.hamburger-menu');
-let $dropdownMenu = document.querySelector('.dropdown-menu');
+const $hamburgerMenu = document.querySelector(".hamburger-menu");
+const $dropdownMenu = document.querySelector(".dropdown-menu");
 
 let menuIsOpen = false;
 
-$hamburgerMenu.addEventListener('click', () => {
-
+$hamburgerMenu.addEventListener("click", () => {
   if (!menuIsOpen) {
     menuIsOpen = true;
-    $dropdownMenu.classList.add('open');
-    $hamburgerMenu.classList.add('open');
+    $dropdownMenu.classList.add("open");
+    $hamburgerMenu.classList.add("open");
   } else {
     menuIsOpen = false;
-    $dropdownMenu.classList.remove('open');
-    $hamburgerMenu.classList.remove('open');
+    $dropdownMenu.classList.remove("open");
+    $hamburgerMenu.classList.remove("open");
   }
 });

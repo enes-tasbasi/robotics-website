@@ -1,7 +1,7 @@
 * {
-  // outline: 1px solid red;
   margin: 0;
   border: 0;
+  box-sizing: border-box;
 }
 
 $main-color: #283963;
@@ -19,6 +19,8 @@ h3,
 h4 {
   font-family: "Roboto Slab", serif;
 }
+
+// ================= NAVBAR ===================
 
 .navbar {
   padding: 0 30px;
@@ -47,6 +49,8 @@ h4 {
 
   .hamburger-menu {
     display: none;
+    cursor: pointer;
+
     > span {
       display: block;
       width: 33px;
@@ -125,10 +129,8 @@ h4 {
       }
     }
   }
-}
 
-@media (max-width: 900px) {
-  .navbar {
+  @media (max-width: 900px) {
     .hamburger-menu {
       display: block;
     }
@@ -143,6 +145,8 @@ h4 {
   }
 }
 
+// =================== LANDING IMAGE / ICON =======================
+
 .landing-image {
   background-image: url("https://via.placeholder.com/1920x600");
   background-position: center;
@@ -153,18 +157,94 @@ h4 {
   justify-content: center;
   align-items: flex-start;
 
+  img {
+    border: 1px solid black;
+  }
+
   .landing-title {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
     margin-top: 60px;
     width: 700px;
 
-    img {
-      border: 1px solid black;
-    }
-
     h1 {
       font-size: 5em;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    height: 500px;
+
+    .landing-title {
+      margin-top: 20px;
+
+      h1 {
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+@mixin section-header {
+  background-color: $main-color;
+  color: $tertiary-color;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 3em;
+  }
+}
+
+// ================== PROJECTS ===================
+
+.container {
+  width: 950px;
+  margin: auto;
+
+  @media screen and (max-width: 1000px) {
+    width: unset;
+    margin: 0 10px;
+  }
+}
+
+section {
+  .projects-section-header {
+    @include section-header;
+  }
+
+  .projects {
+    margin: 35px auto;
+    .project {
+      text-align: left;
+      .header {
+        font-size: 1.8em;
+        margin: 5px;
+      }
+      .description {
+        margin: 30px 0;
+      }
+      .image-gallery {
+        margin: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(, 1fr));
+        img {
+          margin: 5px 0;
+        }
+      }
     }
   }
 }
